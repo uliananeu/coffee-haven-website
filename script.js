@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const wishlistButtons = document.querySelectorAll('.wishlist');
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -20,8 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const wishlistButtons = document.querySelectorAll('.wishlist');
     wishlistButtons.forEach(button => {
+        const productData = JSON.parse(button.dataset.product);
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        const existingProductIndex = favorites.findIndex(item => item.name === productData.name);
+
+        if (existingProductIndex !== -1) {
+            button.classList.add('active');
+            button.innerHTML = '<i class="fas fa-heart"></i>'; // изменение класса здесь
+        }
+
         button.addEventListener('click', function() {
             toggleWishlist(button);
         });
@@ -37,11 +47,11 @@ function toggleWishlist(button) {
     if (existingProductIndex === -1) {
         favorites.push(productData);
         button.classList.add('active');
-        button.innerHTML = '<i class="fas fa-heart"></i>';
+        button.innerHTML = '<i class="fas fa-heart"></i>'; 
     } else {
         favorites.splice(existingProductIndex, 1);
         button.classList.remove('active');
-        button.innerHTML = '<i class="far fa-heart"></i>';
+        button.innerHTML = '<i class="far fa-heart"></i>'; 
     }
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -59,5 +69,4 @@ window.addEventListener('scroll', function() {
     } else {
         menuBar.classList.remove('fixed-menu');
     }
-
 });
