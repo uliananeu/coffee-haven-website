@@ -1,0 +1,329 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background-image: url('https://www.bhmpics.com/downloads/wallpaper-coffee-beans/8.2389934.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 6em 0;
+    color: white;
+    transition: transform 0.3s;
+    position: relative; 
+    z-index: 1; 
+}
+
+.hero:hover {
+    transform: scale(1.02);
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2em;
+}
+
+.hero-button {
+    background-color: white;
+    color: #6b3e26;
+    border: 2px solid #6b3e26;
+    border-radius: 10px;
+    padding: 0.75em 1.5em;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    background-color: #6b3e26;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    position: relative;
+    z-index: 1; 
+}
+
+.main-content {
+    flex: 1;
+    padding: 2em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    z-index: 1; 
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #f5f5dc, #e6e6d3);
+    width: 200px;
+    padding: 1em;
+    border-left: 2px solid #6b3e26;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.menu-bar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-bar nav ul li {
+    margin-bottom: 20px; 
+}
+
+.menu-bar nav a.menu-button {
+    background-color: white;
+    color: #6b3e26;
+    border: 2px solid #6b3e26;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.menu-bar nav a.menu-button:hover {
+    background-color: #6b3e26;
+    color: white;
+}
+
+.product-card {
+    width: calc(42% - 20px);
+    margin: 0 10px 20px 10px; 
+    border-radius: 10px;
+    padding: 1em;
+    background-color: white;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.product-card:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-medium {
+    width: 100%; 
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.product-image-medium:hover {
+    transform: scale(1.05);
+}
+
+.product-image-wrapper {
+    position: relative;
+}
+
+.product-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0.5em;
+}
+
+.add-to-cart,
+.wishlist {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-to-cart {
+    position: relative;
+    bottom: 0; 
+    background-color: #6b3e26; 
+    color: white; 
+    border: 2px solid #6b3e26; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.add-to-cart:hover {
+    background-color: #6b3e26; 
+    color: #6b3e26; 
+}
+
+.add-to-cart:hover,
+.wishlist:hover {
+    background-color: #f0f0f0;
+}
+
+.wishlist.active {
+    color: white; 
+    transition: color 0.3s;
+}
+
+.wishlist i {
+    font-size: 1.5em;
+    color: rgb(218, 65, 65);
+}
+
+.product-info {
+    text-align: center;
+    padding: 1em 0; 
+}
+
+.product-price {
+    font-weight: bold;
+    color: #6b3e26;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.cart-item span {
+    margin-right: 1em;
+}
+
+.cart-item input {
+    width: 50px;
+    margin-right: 1em;
+}
+
+.remove-item {
+    background-color: #ff3b3b;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #ff2020;
+}
+
+footer {
+    width: 100%;
+    background-color: #6b3e26;
+    padding: 2em;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 0.5em;
+}
+
+.contact-icons a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+    color: #f5f5dc;
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-bar {
+        width: 100%;
+        border-bottom: 2px solid #6b3e26;
+        padding: 1em;
+    }
+
+    .main-content {
+        padding: 1em;
+    }
+
+    .product-card {
+        text-align: center;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item span,
+    .cart-item input {
+        margin-bottom: 1em;
+    }
+}
+
+#favorites .menu-bar,
+#cart .menu-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #f5f5dc, #e6e6d3);
+    width: 200px;
+    padding: 1em;
+    border-left: 2px solid #6b3e26;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    display: block;
+    margin: 20px 0px 10px 140px; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+header,
+footer,
+.main-content {
+    position: relative;
+    z-index: 1000;
+}
