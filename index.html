@@ -3,183 +3,212 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Products - Coffee Haven</title>
+    <title>Coffee Haven</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="C:\Users\ulian\Documents\Figma\Icons\Coffee Bean.png" type="image/x-icon"> 
+    <link rel="icon" href="C:\Users\ulian\Documents\Figma\Icons\coffee-bean.svg" type="image/x-icon"> 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Welcome to Coffee Haven</h1>
-            <p>Your one-stop shop for the best coffee beans</p>
-            <a href="#products" class="hero-button">Shop Now</a>
-        </div>
-    </section>
+<div class="menu-bar">
+    <div class="logo">
+        <img src="C:\Users\ulian\Documents\Figma\Icons\Coffee Bean.png.png" alt="Coffee Haven Logo">
+    </div>
+    <div class="burger-menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav>
+        <ul class="menu-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+        </ul>
+    </nav>
+</div>
 
-    <div class="flex-container">
-        <div class="main-content">
-            <section id="products">
-                <h2>Our Products</h2>
-                <div class="product-list">
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080" alt="Colombian Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Colombian Coffee</h3>
-                                <p>Rich and bold flavor with a hint of citrus.</p>
-                                <span class="product-price">$12.99</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Colombian Coffee", "price": 12.99, "image": "https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Colombian Coffee", "price": 12.99, "image": "https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080"}'>Add to Cart</button>
-                            </div>
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Welcome to Coffee Haven</h1>
+        <p>Your one-stop shop for the best coffee!</p>
+        <a href="#products" class="hero-button">Shop Now</a>
+    </div>
+</section>
+
+<div class="section">
+    <h2>Our Story</h2>
+    <p>Founded in 2010, Coffee Haven emerged from a humble beginning as a cozy corner cafe nestled in the bustling heart of the city. Initially envisioned as a sanctuary for weary urbanites seeking respite in a cup of steaming java, our establishment quickly evolved into a thriving hub for coffee connoisseurs and casual caffeine enthusiasts alike.
+
+        As the aroma of freshly roasted beans wafted through the air, word of our exceptional brew spread like wildfire, drawing patrons from far and wide to experience the unparalleled quality and rich flavors that defined our offerings. From the robust depths of South American blends to the delicate subtleties of African single origins, our commitment to sourcing the finest beans from across the globe remained unwavering.
+        
+        With each passing year, our passion for perfection and dedication to the craft propelled us to new heights of excellence. From expanding our menu to include an array of specialty beverages and delectable pastries to fostering a warm and inviting atmosphere that fostered community and camaraderie, Coffee Haven became more than just a cafe—it became a cherished institution, a home away from home for those seeking solace in a cup of coffee.
+        
+        Today, as we reflect on our journey, we remain deeply grateful to our loyal patrons who have journeyed alongside us every step of the way. As we continue to innovate and elevate the coffee experience, our commitment to quality, sustainability, and service remains steadfast, ensuring that Coffee Haven will always be synonymous with the perfect cup of coffee.</p>
+</div>
+
+<div class="flex-container">
+    <div class="main-content">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080" alt="Colombian Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Colombian Coffee</h3>
+                            <p>Rich and bold flavor with a hint of citrus.</p>
+                            <span class="product-price">$12.99</span>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884" alt="Ethiopian Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Ethiopian Coffee</h3>
-                                <p>Fruity and aromatic with floral notes.</p>
-                                <span class="product-price">$14.99</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Ethiopian Coffee", "price": 14.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Ethiopian Coffee", "price": 14.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png" alt="Brazilian Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Brazilian Coffee</h3>
-                                <p>Smooth and mellow with nutty undertones.</p>
-                                <span class="product-price">$13.99</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Brazilian Coffee", "price": 13.99, "image": "https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Brazilian Coffee", "price": 13.99, "image": "https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492" alt="Guatemalan Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Guatemalan Coffee</h3>
-                                <p>Rich and full-bodied with chocolate undertones.</p>
-                                <span class="product-price">$15.99</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Guatemalan Coffee", "price": 15.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Guatemalan Coffee", "price": 15.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422" alt="Indian Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Indian Coffee</h3>
-                                <p>Earthy and spicy with unique aromas.</p>
-                                <span class="product-price">$13.49</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Indian Coffee", "price": 13.49, "image": "https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Indian Coffee", "price": 13.49, "image": "https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809" alt="Sumatran Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Sumatran Coffee</h3>
-                                <p>Earthy and spicy with hints of herbs.</p>
-                                <span class="product-price">$16.49</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Sumatran Coffee", "price": 16.49, "image": "https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Sumatran Coffee", "price": 16.49, "image": "https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048" alt="Kenyan Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Kenyan Coffee</h3>
-                                <p>Bright acidity with fruity and floral notes.</p>
-                                <span class="product-price">$17.99</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Kenyan Coffee", "price": 17.99, "image": "https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Kenyan Coffee", "price": 17.99, "image": "https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048"}'>Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270" alt="Costa Rican Coffee" class="product-image-medium">
-                            <div class="product-info">
-                                <h3>Costa Rican Coffee</h3>
-                                <p>Smooth with bright acidity and hints of citrus.</p>
-                                <span class="product-price">$14.49</span>
-                            </div>
-                            <div class="product-controls">
-                                <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Costa Rican Coffee", "price": 14.49, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270"}'>
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="add-to-cart" data-product='{"name": "Costa Rican Coffee", "price": 14.49, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270"}'>Add to Cart</button>
-                            </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Colombian Coffee", "price": 12.99, "image": "https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Colombian Coffee", "price": 12.99, "image": "https://panera-coffee.com/cdn/shop/files/PNR-Colombian-12oz-bag-front.jpg?v=1690355303&width=1080"}'>Add to Cart</button>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="about">
-                <h2>About Us</h2>
-                <div class="about-container">
-                    <div class="about-text">
-                        <p>At Coffee Haven, we're passionate about providing the best coffee experience. Our journey began with a love for coffee and a desire to share the unique flavors of the world's finest coffee beans with you.</p>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884" alt="Ethiopian Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Ethiopian Coffee</h3>
+                            <p>Fruity and aromatic with floral notes.</p>
+                            <span class="product-price">$14.99</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Ethiopian Coffee", "price": 14.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Ethiopian Coffee", "price": 14.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_1fb0c7ea-a72d-4866-9ac7-3b8fd6f755e3.jpg?v=1703807884"}'>Add to Cart</button>
+                        </div>
                     </div>
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/037/978/006/small_2x/ai-generated-coffee-harvest-on-plantation-photo.jpg" alt="Coffee Farm" class="about-image">
                 </div>
-            </section>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png" alt="Brazilian Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Brazilian Coffee</h3>
+                            <p>Smooth and mellow with nutty undertones.</p>
+                            <span class="product-price">$13.99</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Brazilian Coffee", "price": 13.99, "image": "https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Brazilian Coffee", "price": 13.99, "image": "https://freshground.co.uk/wp-content/uploads/2022/10/wp-image24551725039767.png"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492" alt="Guatemalan Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Guatemalan Coffee</h3>
+                            <p>Rich and full-bodied with chocolate undertones.</p>
+                            <span class="product-price">$15.99</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Guatemalan Coffee", "price": 15.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Guatemalan Coffee", "price": 15.99, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_dbe6f1e9-5dbe-4f2a-ab2b-8dc0c6434e99_700x700.jpg?v=1703802492"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422" alt="Indian Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Indian Coffee</h3>
+                            <p>Earthy and spicy with unique aromas.</p>
+                            <span class="product-price">$13.49</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Indian Coffee", "price": 13.49, "image": "https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Indian Coffee", "price": 13.49, "image": "https://www.colombianbrew.in/cdn/shop/products/8906088702701_1_1500x.png?v=1651816422"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809" alt="Sumatran Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Sumatran Coffee</h3>
+                            <p>Earthy and spicy with hints of herbs.</p>
+                            <span class="product-price">$16.49</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Sumatran Coffee", "price": 16.49, "image": "https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Sumatran Coffee", "price": 16.49, "image": "https://humblemaker.coffee/cdn/shop/products/QWYp1_1024x1024.jpg?v=1648671809"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048" alt="Kenyan Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Kenyan Coffee</h3>
+                            <p>Bright acidity with fruity and floral notes.</p>
+                            <span class="product-price">$17.99</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Kenyan Coffee", "price": 17.99, "image": "https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Kenyan Coffee", "price": 17.99, "image": "https://caffecorsini.com/cdn/shop/files/DKE102_shop.jpg?v=1714379159&width=2048"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270" alt="Costa Rican Coffee" class="product-image-medium">
+                        <div class="product-info">
+                            <h3>Costa Rican Coffee</h3>
+                            <p>Smooth with bright acidity and hints of citrus.</p>
+                            <span class="product-price">$14.49</span>
+                        </div>
+                        <div class="product-controls">
+                            <button class="wishlist" onclick="toggleWishlist(this)" data-product='{"name": "Costa Rican Coffee", "price": 14.49, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270"}'>
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart" data-product='{"name": "Costa Rican Coffee", "price": 14.49, "image": "https://www.freshroastedcoffee.com/cdn/shop/products/medium_6669313d-b331-4b8e-b861-dedbe5b8ff15_700x700.jpg?v=1703803270"}'>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<section id="about">
+    <div class="about-container">
+        <h2>About Us</h2>
+            <p>At Coffee Haven, we're passionate about providing the best coffee experience. Our journey began with a love for coffee and a desire to share the unique flavors of the world's finest coffee beans with you.</p>
+                            <p>Our story is one of dedication, innovation, and a commitment to quality. From the beginning, we have sought out the highest quality beans from renowned coffee-growing regions around the world. Each batch is meticulously roasted to perfection, ensuring that every cup delivers an unparalleled taste experience.</p>
+                            <p>Over the years, we have grown from a small local coffee shop into a beloved brand with a loyal customer base. Our success is built on the relationships we have formed with our customers, our community, and our suppliers. We believe in sustainable practices and work closely with coffee farmers to ensure fair trade and support for local communities.</p>
+                            <p>At Coffee Haven, we believe that coffee is more than just a beverage; it is a way of life. We are dedicated to creating a warm and welcoming environment where people can come together to enjoy great coffee, connect with friends, and take a moment to savor the simple pleasures of life.</p>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/037/978/006/small_2x/ai-generated-coffee-harvest-on-plantation-photo.jpg" alt="Coffee Farm" class="about-image">
+    </div> 
+</section> 
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Coffee Haven. All rights reserved.</p>
+        <div class="contact-icons">
+            <a href="mailto:info@coffeehaven.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://facebook.com/coffeehaven"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/coffeehaven"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/coffeehaven"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
+</footer>
 
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Coffee Haven. All rights reserved.</p>
-            <div class="contact-icons">
-                <a href="mailto:info@coffeehaven.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://facebook.com/coffeehaven"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/coffeehaven"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/coffeehaven"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

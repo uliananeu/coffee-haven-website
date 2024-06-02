@@ -59,4 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    const addToFavoritesBtn = document.getElementById('addToFavoritesBtn');
+
+    addToFavoritesBtn.addEventListener('click', function() {
+        alert('Product added to favorites');
+        window.location.href = 'favorites.html';
+    });
 });

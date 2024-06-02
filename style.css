@@ -13,6 +13,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .hero {
@@ -20,7 +21,7 @@ html {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 6em 0;
+    padding: 170px 0;
     color: white;
     transition: transform 0.3s;
     position: relative;
@@ -33,11 +34,12 @@ html {
 
 .hero-text {
     background: rgba(0, 0, 0, 0.6);
-    padding: 2em;
+    padding: 30px;
+    margin-bottom: 2%;
 }
 
 .hero-text p {
-    margin-bottom: 1.5em; 
+    margin-bottom: 2%; 
 }
 
 .hero-button {
@@ -55,6 +57,35 @@ html {
 .hero-button:hover {
     background-color: #6b3e26;
     color: white;
+}
+
+.section {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 3%;
+    margin: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    text-align: justify;
+    color: #191919;
+    margin-bottom: 5px;
+}
+
+.section p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
+.section ul li {
+    margin-bottom: 100px;
 }
 
 .flex-container {
@@ -149,14 +180,16 @@ html {
     background-color: #f0f0f0;
 }
 
-.wishlist.active {
-    color: white;
-    transition: color 0.3s;
+.far.fa-heart {
+    font-size: medium;
+    color: #6c6c6c;
+    transition: color 0.3s ease, 
 }
 
-.wishlist i {
-    font-size: 1.5em;
-    color: rgb(218, 65, 65);
+.far.fa-heart.active {
+    font-size: medium;
+    color: #e74c3c;
+    transition: color 0.3s ease, 
 }
 
 .product-info {
@@ -204,6 +237,44 @@ html {
     background-color: #ff2020;
 }
 
+.about-container {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 3%;
+    margin: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-container h2 {
+    text-align: left;
+    color: #191919;
+    margin-bottom: 5px;
+}
+
+.about-container p {
+    text-align: justify;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about-container ul {
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
+.about-container ul li {
+    margin-bottom: 100px;
+}
+
+.about-image {
+    background-position: center;
+    border-radius: 20px; 
+    margin-top: 35px; 
+    height: auto;
+}
+
+
 footer {
     width: 100%;
     background-color: #6b3e26;
@@ -235,78 +306,104 @@ footer {
     color: #f5f5dc;
 }
 
-.menu-bar nav ul {
+.menu-bar {
+    background-color:#6b3e26;
+    color: #6b3e26;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.menu-bar nav ul.menu-list {
+.menu-bar nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar nav ul li {
+    margin-right: 1em;
+}
+
+.menu-bar nav ul li a {
+   background-color: white;
+    color: #6b3e26;
+    padding: 0.5em 1em;
+    border: 2px solid #6b3e26;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.menu-bar nav ul li a:hover {
+    color:white;
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.menu-bar .logo img {
+    width: 40px; 
+    height: auto; 
+}
+
+.burger-menu {
     display: none;
+    color: #6b3e26;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.alert-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.alert-box.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear;
 }
 
 @media (max-width: 768px) {
-    .flex-container {
+    .menu-bar nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        padding: 1em;
+        background-color: rgba(107, 62, 38, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
     }
 
-    .menu-bar {
-        width: 100%;
-        border-bottom: 2px solid #6b3e26;
-        padding: 1em;
+    .menu-bar nav ul li {
+        margin-bottom: 0.5em;
     }
 
     .burger-menu {
         display: block;
     }
 
-    .menu-bar nav ul.menu-list {
-        display: none;
-        flex-direction: column;
-    }
-
     .menu-bar nav ul.menu-list.show {
         display: flex;
     }
-
-    .main-content {
-        padding: 1em;
-    }
-
-    .product-card {
-        text-align: center;
-    }
-
-    .cart-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cart-item span,
-    .cart-item input {
-        margin-bottom: 1em;
-    }
-}
-
-#favorites .menu-bar,
-#cart .menu-bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    overflow-y: auto;
-    background: linear-gradient(180deg, #f5f5dc, #e6e6d3);
-    width: 200px;
-    padding: 1em;
-    border-left: 2px solid #6b3e26;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.about-image {
-    display: block;
-    margin: 20px 0px 10px 140px; 
-    max-width: 100%; 
-    height: auto; 
 }
 
 header,
