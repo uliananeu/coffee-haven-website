@@ -16,6 +16,80 @@ html {
     overflow-x: hidden;
 }
 
+.menu-bar {
+    background-color: #6b3e26e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-bar nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar nav ul li {
+    margin-right: 10px;
+}
+
+.menu-bar nav ul li a {
+    background-color: white;
+    color: #6b3e26;
+    padding: 0.5em 1em;
+    border: 1px solid #6b3e26;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.menu-bar nav ul li a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-bar .logo img {
+    width: 40px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .menu-bar nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #6b3e26;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    .menu-bar nav ul li {
+        margin: 0;
+    }
+
+    .menu-bar nav ul li a {
+        padding: 1em;
+        display: block;
+    }
+
+    .menu-bar nav ul.menu-list.open {
+        display: flex;
+    }
+}
+
 .hero {
     background-image: url('https://www.bhmpics.com/downloads/wallpaper-coffee-beans/8.2389934.jpg');
     background-size: cover;
@@ -39,7 +113,7 @@ html {
 }
 
 .hero-text p {
-    margin-bottom: 2%; 
+    margin-bottom: 2%;
 }
 
 .hero-button {
@@ -104,14 +178,16 @@ html {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    width: 80%;
+    margin-top: 80px;
 }
 
 .product-card {
-    width: calc(43% - 20px);
+    width: calc(35% - 20px);
     margin: 20px 10px 20px 10px;
-    margin-left: 6%; 
+    margin-left: 10%;
     border-radius: 10px;
-    padding: 1em;
+    padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
     transition: all 0.3s;
@@ -119,7 +195,6 @@ html {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    width: calc(43% - 2em);
 }
 
 .product-card:hover {
@@ -171,8 +246,7 @@ html {
 }
 
 .add-to-cart:hover {
-    background-color: #6b3e26;
-    color: #6b3e26;
+    background-color: #542b1f;
 }
 
 .add-to-cart:hover,
@@ -183,13 +257,13 @@ html {
 .far.fa-heart {
     font-size: medium;
     color: #6c6c6c;
-    transition: color 0.3s ease, 
+    transition: color 0.3s ease;
 }
 
 .far.fa-heart.active {
     font-size: medium;
     color: #e74c3c;
-    transition: color 0.3s ease, 
+    transition: color 0.3s ease;
 }
 
 .product-info {
@@ -225,7 +299,7 @@ html {
 }
 
 .remove-item {
-    background-color: #ff3b3b;
+    background-color: #a80000;
     color: white;
     border-radius: 10px;
     border: none;
@@ -234,11 +308,12 @@ html {
 }
 
 .remove-item:hover {
-    background-color: #ff2020;
+    background-color: #a10000;
 }
 
 .about-container {
-    text-align: center;
+    display: flex;
+    align-items: center;
     background-color: #f9f9f9;
     padding: 3%;
     margin: 30px 20px;
@@ -246,34 +321,32 @@ html {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
 .about-container h2 {
     text-align: left;
     color: #191919;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .about-container p {
     text-align: justify;
     color: #333;
     line-height: 1.6;
-}
-
-.about-container ul {
-    list-style-type: disc;
-    margin-left: 2em;
-}
-
-.about-container ul li {
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 .about-image {
-    background-position: center;
-    border-radius: 20px; 
-    margin-top: 35px; 
-    height: auto;
+    flex: 0 0 200px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 20px;
 }
-
 
 footer {
     width: 100%;
@@ -282,7 +355,7 @@ footer {
     text-align: center;
     color: white;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
@@ -306,59 +379,6 @@ footer {
     color: #f5f5dc;
 }
 
-.menu-bar {
-    background-color:#6b3e26;
-    color: #6b3e26;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.menu-bar nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-bar nav ul li {
-    margin-right: 1em;
-}
-
-.menu-bar nav ul li a {
-   background-color: white;
-    color: #6b3e26;
-    padding: 0.5em 1em;
-    border: 2px solid #6b3e26;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-
-.menu-bar nav ul li a:hover {
-    color:white;
-    background-color: rgba(255, 255, 255, 0.1); 
-}
-
-.menu-bar .logo img {
-    width: 40px; 
-    height: auto; 
-}
-
-.burger-menu {
-    display: none;
-    color: #6b3e26;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
 .alert-box {
     position: fixed;
     bottom: 20px;
@@ -377,38 +397,65 @@ footer {
 .alert-box.show {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease, visibility 0s linear;
+    transition: opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .menu-bar nav ul {
-        display: none;
-        flex-direction: column;
-        padding: 1em;
-        background-color: rgba(107, 62, 38, 0.9);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-    }
-
-    .menu-bar nav ul li {
-        margin-bottom: 0.5em;
-    }
-
-    .burger-menu {
-        display: block;
-    }
-
-    .menu-bar nav ul.menu-list.show {
-        display: flex;
-    }
+.review {
+    text-align: center;
+    font-size: large;
+    background-color: #f5f5dc;
+    color: #6b3e26;
+    border: 2px solid #6b3e26;
+    border-radius: 8px;
+    margin-top: 3%;
+    padding: 1em 2em;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-header,
-footer,
-.main-content {
-    position: relative;
-    z-index: 1000;
+.review:hover {
+    background-color: #f0f0f0;
+    color: #6b3e26;
+}
+
+.review-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    background-color: #f5f5dc;
+    border: 2px solid #6b3e26;
+    border-radius: 10px;
+    padding: 3% 1.5%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-section div {
+    width: 20%;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.review-section img {
+    border-radius: 50%;
+    width: 50%;
+}
+
+.review-section p {
+    padding: 3%;
+    font-size: medium;
+    line-height: 1.6;
+}
+
+.go-to-favorites {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #6b3e26;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.go-to-favorites:hover {
+    color: #e74c3c;
 }

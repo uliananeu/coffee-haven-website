@@ -91,3 +91,31 @@ window.addEventListener('scroll', function() {
         menuBar.classList.remove('fixed-menu');
     }
 });
+
+function toggleMenu() {
+    const menuList = document.querySelector('.menu-list');
+    menuList.classList.toggle('open');
+}
+
+let lastScroll =0;
+const defaulOffset  = 200;
+const header = document.querySelector(".menu-bar")
+
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
+const containHide = () => header.classList.contains('hide');
+
+window.addEventListener('scroll', () => {
+    if(scrollPosition() > lastScroll && !containHide()) {
+        //scroll down 
+        header.classList.add("hide");
+        console.log('down');
+    }
+    else if(scrollPosition() < lastScroll && containHide()) {
+        //scroll up
+        console.log('up')
+        header.classList.remove('hide')
+    }
+
+    lastScroll = scrollPosition();
+})
+

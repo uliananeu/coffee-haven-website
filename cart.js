@@ -60,10 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const addToFavoritesBtn = document.getElementById('addToFavoritesBtn');
+    const favoritesIcon = document.createElement('i');
+    favoritesIcon.className = 'fas fa-heart go-to-favorites';
 
-    addToFavoritesBtn.addEventListener('click', function() {
-        alert('Product added to favorites');
+    favoritesIcon.addEventListener('click', function() {
         window.location.href = 'favorites.html';
     });
+
+    const mainContent = document.querySelector('.main-content');
+    mainContent.appendChild(favoritesIcon);
 });
+
