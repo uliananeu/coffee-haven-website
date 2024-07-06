@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const updateTotal = () => {
+        let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        cartTotal.querySelector('h3').textContent = `Total: $${total.toFixed(2)}`;
+    };
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<p>Your cart is empty. Start shopping!</p>';
@@ -26,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
             itemQuantity.addEventListener('change', function() {
                 item.quantity = parseInt(this.value, 10); 
                 localStorage.setItem('cart', JSON.stringify(cart)); 
+                updateTotal();
+                itemPrice.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
             });
 
             const itemPrice = document.createElement('span'); 
@@ -38,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             listItem.appendChild(itemImage);
             listItem.appendChild(itemName);
-            listItem.appendChild(itemQuantity);
             listItem.appendChild(itemPrice);
+            listItem.appendChild(itemQuantity);
             listItem.appendChild(removeButton);
 
             itemList.appendChild(listItem); 
@@ -56,8 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const itemList = document.querySelector('#cart-items ul');
                 itemList.removeChild(itemList.childNodes[index]);
+
+                updateTotal();
+
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p>Your cart is empty. Start shopping!</p>';
+                }
             });
         });
+
+        updateTotal();
     }
 
     const favoritesIcon = document.createElement('i');
