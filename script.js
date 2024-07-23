@@ -92,11 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function toggleMenu() {
-        const menuList = document.querySelector('.menu-list');
-        menuList.classList.toggle('open');
-    }
-
     let lastScroll = 0;
     const defaultOffset = 200;
     const header = document.querySelector('.menu-bar');
