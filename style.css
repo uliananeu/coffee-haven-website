@@ -98,8 +98,8 @@ html {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 60px 0;
-    color: white;
+    padding: 20px 0;
+    color: rgb(255, 255, 255);
     transition: transform 0.3s;
     position: relative;
     z-index: 1;
@@ -110,8 +110,11 @@ html {
 }
 
 .hero-text {
-    padding: 20px;
-    margin-bottom: 1%;
+    color: rgb(270, 270, 270);
+    font-size: 30px;
+    -webkit-text-stroke: 0.7px #6b3e26;
+    margin-top: 50px;
+    padding: 40px; 
 }
 
 .hero-text p {
@@ -139,7 +142,7 @@ html {
     text-align: left;
     background-color: #f9f9f9;
     padding: 3%;
-    margin: 30px 20px;
+    margin: 20px 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -167,21 +170,22 @@ html {
 .flex-container {
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 1%;
     position: relative;
+    margin-top: 60px;
     z-index: 1;
 }
 
 .main-content {
     flex: 1;
-    padding: 2em;
+    padding: 3%;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
     width: 80%;
-    margin-top: 80px;
+    margin-top: 10px;
 }
 
 .product-card {
@@ -326,7 +330,7 @@ html {
     align-items: center;
     background-color: #f9f9f9;
     padding: 3%;
-    margin: 30px 20px;
+    margin: 20px 15px;
     border-radius: 10px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -351,8 +355,8 @@ html {
 
 .about-image {
     flex: 0 0 200px;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 10px;
     object-fit: cover;
     margin-left: 20px;
@@ -469,4 +473,26 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #6b3e26;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
 }
