@@ -76,14 +76,5 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTotal();
     }
 
-    const favoritesIcon = document.createElement('i');
-    favoritesIcon.className = 'fas fa-heart go-to-favorites';
-
-    favoritesIcon.addEventListener('click', function() {
-        window.location.href = 'favorites.html';
-    });
-
-    const mainContent = document.querySelector('.main-content');
-    mainContent.appendChild(favoritesIcon);
 });
 

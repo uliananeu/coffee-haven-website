@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const favoritesSection = document.getElementById('favorites');
     const favoritesList = document.getElementById('favorites-list');
+    const cartCountSpan = document.getElementById('cart-count'); 
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     if (favorites.length === 0) {
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 favorites.splice(index, 1); 
                 localStorage.setItem('favorites', JSON.stringify(favorites)); 
                 renderFavorites(); 
+                updateCartCount(); 
             });
 
             listItem.appendChild(productImage);
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     favorites.splice(index, 1); 
                     localStorage.setItem('favorites', JSON.stringify(favorites)); 
                     renderFavorites(); 
+                    updateCartCount(); 
                 });
 
                 listItem.appendChild(productImage);
@@ -75,4 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+        cartCountSpan.textContent = totalItems;
+    }
+
+    updateCartCount(); 
 });
