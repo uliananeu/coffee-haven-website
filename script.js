@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    //const addToFavoritesButtons = document.querySelectorAll('.add-to-favorites');
     const wishlistButtons = document.querySelectorAll('.wishlist');
 
     addToCartButtons.forEach(button => {
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${productData.name} has been added to your cart!`);
+            showTemporaryAlert(`${productData.name} has been added to your cart!`);
         });
     });
 
@@ -37,10 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             localStorage.setItem('favorites', JSON.stringify(cart));
-            alert(`${productData.name} has been added to your Favorites!`);
+            showTemporaryAlert(`${productData.name} has been added to your Favorites!`);
         });
     });
-
 
     wishlistButtons.forEach(button => {
         const productData = JSON.parse(button.dataset.product);
@@ -58,6 +56,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function showTemporaryAlert(message) {
+    const alertDiv = document.createElement('div');
+    alertDiv.classList.add('custom-alert');
+    alertDiv.textContent = message;
+    document.body.appendChild(alertDiv);
+    
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 3000);
+}
 
 function toggleWishlist(button) {
     const productData = JSON.parse(button.dataset.product);
@@ -97,25 +106,19 @@ function toggleMenu() {
     menuList.classList.toggle('open');
 }
 
-let lastScroll =0;
-const defaulOffset  = 200;
-const header = document.querySelector(".menu-bar")
+let lastScroll = 0;
+const defaultOffset = 200;
+const header = document.querySelector('.menu-bar');
 
-const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
 const containHide = () => header.classList.contains('hide');
 
 window.addEventListener('scroll', () => {
-    if(scrollPosition() > lastScroll && !containHide()) {
-        //scroll down 
-        header.classList.add("hide");
-        console.log('down');
-    }
-    else if(scrollPosition() < lastScroll && containHide()) {
-        //scroll up
-        console.log('up')
-        header.classList.remove('hide')
+    if (scrollPosition() > lastScroll && !containHide()) {
+        header.classList.add('hide');
+    } else if (scrollPosition() < lastScroll && containHide()) {
+        header.classList.remove('hide');
     }
 
     lastScroll = scrollPosition();
-})
-
+});
