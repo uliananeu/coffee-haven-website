@@ -4,7 +4,7 @@
 
 ## Description
 
-Welcome to Coffee Haven, your shop for premium coffee! This project is built with React and JavaScript to provide an exceptional user experience for coffee enthusiasts. The site provides a seamless shopping experience, allowing users to browse through various products, add items to their cart and favorites page.
+Welcome to Coffee Haven, your shop for premium coffee! This project is built with JavaScript. provides a seamless shopping experience, allowing users to browse through various products, add items to their cart and favorites page.
 
 ## Visit the website
 
