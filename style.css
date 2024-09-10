@@ -79,7 +79,7 @@ html {
 }
 
 .hero {
-    background-image: url('https://assets.bonappetit.com/photos/57c5d0e36a6acdf3485dfb2b/16:9/w_2560%2Cc_limit/3717295073_f5ae257d71_o.jpg');
+    background-image: url('https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?cs=srgb&dl=pexels-igor-haritanovich-814387-1695052.jpg&fm=jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -88,6 +88,7 @@ html {
     transition: transform 0.3s;
     position: relative;
     z-index: 1;
+    height: 300px;
 }
 
 .hero:hover {
