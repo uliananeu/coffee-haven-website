@@ -277,8 +277,18 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: 1em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 3px solid #ddd;
+    height: 300px;
 }
+
+#cart-items p {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    height: 190px;
+}
+
 
 .cart-item-image {
     width: 80px;

@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         cartTotal.querySelector('h3').textContent = `Total: $${total.toFixed(2)}`;
     };
 
+    const showEmptyMessage = () => {
+        cartItems.innerHTML = '<p>Your Card is empty!</p>';
+    };
+
     if (cart.length === 0) {
-        cartItems.innerHTML = '<p>Your cart is empty. Start shopping!</p>';
+        showEmptyMessage();
     } else {
         const itemList = document.createElement('ul');
 
@@ -68,13 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateTotal();
 
                 if (cart.length === 0) {
-                    cartItems.innerHTML = '<p>Your cart is empty. Start shopping!</p>';
+                    showEmptyMessage();
                 }
             });
         });
 
         updateTotal();
     }
-
 });
-
