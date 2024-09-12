@@ -1,6 +1,6 @@
 # coffee-haven-website
 
-![Screenshot 2024-07-23 175701](https://github.com/user-attachments/assets/38f2287d-8b58-4901-ae25-d368ce845c5b)
+![Screenshot 2024-09-12 143232](https://github.com/user-attachments/assets/44ee08f7-f585-468a-a8bd-77b59d634d88)
 
 ## Description
 
